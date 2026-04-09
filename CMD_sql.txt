@@ -1,0 +1,3 @@
+sqlcmd -S .\SQLEXPRESS -E -Q "RESTORE FILELISTONLY FROM DISK='C:\yedek\per10Database.bak'"
+
+sqlcmd -S .\SQLEXPRESS -E -Q "RESTORE DATABASE per10Database FROM DISK='C:\yedek\per10Database.bak' WITH MOVE 'per10Database' TO 'C:\yedek\per10Database.mdf', MOVE 'per10Database_log' TO 'C:\yedek\per10Database.ldf', REPLACE"
