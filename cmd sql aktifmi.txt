@@ -1,0 +1,3 @@
+sqlcmd -S .\SQLEXPRESS -E -d per10Database -Q "ALTER TABLE Markalar ADD AktifMi BIT NOT NULL DEFAULT 1"
+
+sqlcmd -S .\SQLEXPRESS -E -d per10Database -Q "SELECT 'Urunler' AS Tablo, COUNT(*) AS ToplamKayit, SUM(CAST(AktifMi AS INT)) AS AktifKayit FROM Urunler UNION ALL SELECT 'Markalar', COUNT(*), SUM(CAST(AktifMi AS INT)) FROM Markalar"
